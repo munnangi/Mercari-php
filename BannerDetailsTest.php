@@ -27,7 +27,7 @@ Class BannerDetailsTest extends TestCase{
         $bannerDetailsArray[]=array('starttime'=>$startime,'endtime'=>$endtime , 'bannertit'=>'Banner 1');
 
         $Obj->createBanners($bannerDetailsArray);
-        $this->expectOutputString('');
+        $this->expectOutputString('Banner Not Available');
         $Obj->displayBanner();
 
     }

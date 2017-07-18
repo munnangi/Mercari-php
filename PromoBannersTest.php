@@ -4,7 +4,6 @@
  * Created by PhpStorm.
  * User: munna
  * Date: 7/17/2017
- * Time: 7:53 PM
  */
 include_once('PromoBanners.php');
 use PHPUnit\Framework\TestCase;

@@ -63,6 +63,9 @@ class BannerDetails
                     print "This is an active banner " . $banner->getBannerTitle();
 
                 }
+                else{
+                    print "Banner Not Available";
+                }
             }
         }
     }
