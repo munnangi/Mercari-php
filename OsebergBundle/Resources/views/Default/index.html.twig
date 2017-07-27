@@ -1,0 +1,38 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ 'css/oseberg.css' }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="{{ asset('js/WordGenerate.js') }}"></script>
+
+</head>
+<body>
+<form>
+
+    <div class="container">
+        <div class="form-group row">
+            <div class="col-10">
+                <input class="form-control" type="text" placeholder="word" value="{{ word }}" id="wordg">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="btn-group" role="group">
+                <button type="button" id="button_generate" class="btn btn-default">Generate Word</button>
+                <button type="button" id="button_transform" class="btn btn-default">Transform Word</button>
+            </div>
+        </div>
+        <span id="waiting" class="modal">Please wait for word</span>
+        <span id="waiting" class="modalt">Please wait for word</span>
+    </div>
+
+
+
+</form>
+
+</body>
+</html>

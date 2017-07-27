@@ -1,0 +1,71 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/redditStyles.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="{{ asset('js/lib/jquery.easyPaginate.js') }}"></script>
+    <script src="{{ asset('js/redditJs.js') }}"></script>
+</head>
+<body>
+
+<div class="  text-center">
+    <h1>Reddit Feed <small>(Research.com)</small></h1>
+</div>
+        <div class="container">
+            <div class="row">
+                <ul class = "nav nav-tabs">
+                    <li class="active"><a href ="#tab1" data-toggle ="tab">Hot</a> </li>
+                    <li><a href ="#tab2" id="newtab" data-toggle ="tab">New</a></li>
+                </ul>
+
+                </div>
+{#Tab 1#}
+            <div class="tab-content">
+                <div class="tab-pane active" id = "tab1">
+{#search #}
+                    <div>
+                    <div class="col-sm-3  pull-right">
+                     <div class="form-group has-feedback">
+                    <input type="text" class="form-control" placeholder="Search" onkeyup="searchText($(this),'redditfeed')" name="srch-txt" id="srch-txt">
+                    <i class="glyphicon glyphicon-search  form-control-feedback"></i>
+                     </div>
+
+                </div>
+            </div>
+ {#search end#}
+
+
+            <div id="easyPaginate">
+                {% if resph is defined %}
+                {% for dataval in resph.children %}
+                <div  class="clearfix content-heading">
+                        <img class="pull-left img-rounded" alt="Not Found" width="50" height="50" src="{{ dataval.data.thumbnail }}">
+                        <a  class='redditfeed' href="{{ dataval.data.url }}" >{{ dataval.data.title }}</a>
+                        <p><a class='commentsfeed' href="{{ dataval.data.permalink }}" >{{ dataval.data.num_comments }} comments</a> </p>
+                </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
+                </div>
+
+{#Tab 2#}
+        <div class="tab-pane" id = "tab2">
+
+
+        </div>
+
+    </div> {#container#}
+
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+oseberg_word:
+        path:     /word
+        defaults: { _controller: OsebergBundle:Default:wordGenerator }
+oseberg_home:
+    path:     /home
+    defaults: { _controller: OsebergBundle:Default:index }
+oseberg_transform:
+        path:     /transform
+        defaults: { _controller: OsebergBundle:Default:transform }
+        methods: POST
+
+

@@ -1,0 +1,6 @@
+reddit_homepage:
+    path:     /reddit/
+    defaults: { _controller: RedditBundle:Default:Hot }
+reddit_newfeeds:
+    path:     /new/
+    defaults: { _controller: RedditBundle:Default:New }

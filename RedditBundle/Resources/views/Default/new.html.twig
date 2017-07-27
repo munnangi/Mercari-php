@@ -1,0 +1,23 @@
+{#search #}
+<div>
+    <div class="col-sm-3  pull-right">
+        <div class="form-group has-feedback">
+            <input type="text" class="form-control" placeholder="Search" onkeyup="searchText($(this),'redditfeedNew')" name="srch-txt-new" id="srch-txt-new">
+            <i class="glyphicon glyphicon-search  form-control-feedback"></i>
+        </div>
+    </div>
+</div>
+{#search end#}
+<div id="easyPaginateNew">
+    {% if respn is defined %}
+        {% for dataval in respn.children %}
+            <div class="clearfix content-heading">
+                <img class="pull-left" alt="Not Found" width="50" height="50" src="{{ dataval.data.thumbnail }}">
+                <a class='redditfeedNew' href="{{ dataval.data.url }}" >{{ dataval.data.title }}</a>
+                <p><a class='commentsfeed' href="{{ dataval.data.permalink }}" >{{ dataval.data.num_comments }} comments</a> </p>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+<script src="{{ asset('js/redditJs.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('css/redditStyles.css') }}">
